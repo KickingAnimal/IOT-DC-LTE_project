@@ -76,7 +76,7 @@ while wifi.isconnected() or lte.isconnected():
     n += 5
     i += 5
     if i > 30:
-        blink(0x333300, 1, 0.025)
+        blink(0x333300, 2, 0.05)
         print("BLINK!")
         i = 0
 
@@ -111,7 +111,7 @@ while wifi.isconnected() or lte.isconnected():
                 if error == "Status updated to: '{}'".format(serverStatus):
                     blink(0x00FF00, 10, 0.025)
                 else:
-                    blink(0xFF0000, 10, 0.025)
+                    blink(0xFF0000, 10, 0.25)
             n = 0
 
     if n > 3600:
@@ -125,5 +125,5 @@ while wifi.isconnected() or lte.isconnected():
             if error == corect:
                 blink(0x0000FF, 10, 0.025)
             else:
-                blink(0xFF0000, 10, 0.025)
+                blink(0xFF0000, 10, 0.25)
         n = 0
