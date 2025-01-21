@@ -27,24 +27,7 @@ This guide will walk you through the steps to set up the IOT-DC-LTE project, inc
    - Open VSCode.
    - Go to `File` > `Open Folder` and select the cloned repository folder.
 
-### Step 2: Flashing the Pycom FiPy
-
-1. **Install Pymakr Extension in VSCode:**
-   - Open VSCode.
-   - Go to the Extensions view by clicking the Extensions icon in the Activity Bar on the side of the window.
-   - Search for "PyMakr" and install the PyMakr extension.
-
-2. **Connect Pycom FiPy to Expansion Board:**
-   - Connect your Pycom FiPy to the Pycom Expansion Board.
-   - Connect the Expansion Board to your computer via USB.
-
-3. **Flash the Firmware:**
-   - Open the PyMakr Console in VSCode.
-   - Select the correct serial port for your FiPy.
-   - Click on the "Flash" button to flash the latest firmware to your FiPy.
-
-
-### Step 3: Configuring the Code
+### Step 2: Configuring the Code
 
 1. **Update WiFi and Server Configuration:**
    - Open the `pycom/config.py` file.
@@ -70,6 +53,25 @@ This guide will walk you through the steps to set up the IOT-DC-LTE project, inc
    PASSWORD = 'your_wifi_password'
    ```
 
+### Step 3: Flashing the Pycom FiPy
+
+1. **Install Pymakr Extension in VSCode:**
+   - Open VSCode.
+   - Go to the Extensions view by clicking the Extensions icon in the Activity Bar on the side of the window.
+   - Search for "PyMakr" and install the PyMakr extension.
+
+2. **Connect Pycom FiPy to Expansion Board:**
+   - Connect your Pycom FiPy to the Pycom Expansion Board.
+   - Connect the Expansion Board to your computer via USB.
+
+3. **Flash the Firmware:**
+   - Open the PyMakr Console in VSCode.
+   - Select the correct serial port for your FiPy.
+   - Click on the "Flash" button to flash the latest firmware to your FiPy.
+
+
+
+
 ### Step 4: Running the Flask Webserver
 
 1. **Install Dependencies:**
@@ -86,15 +88,20 @@ This guide will walk you through the steps to set up the IOT-DC-LTE project, inc
      ```
 
 3. **Access the Webserver:**
-   - Open a web browser and go to `http://your.server.ip:4000` for HTTP
+   - Open a web browser and go to `http://your.server.ip:4000` for HTTP (depending on your server settings)
 
 ### Additional Information
 
 - **LED Indications:**
-  - The FiPy will cycle through RGB colors on startup.
-  - It will blink green on successful connection and red on failure.
+  - The FiPy will cycle through RGB colors on startup after it has connected to NB-IOT or the back-up WiFi connection.
+  - During the boot proecess the LED will blink Blue occasionaly
+  - It will blink green on successful data transmission and red on failure.
+  - When connected the LED will blink yellow ~every 30 seconds to indicate that it is still powered on.
+  - The LED will blink blue every time it has sent a 'heartbeat' signal to the server with success. 
 
 - **Button Press:**
-  - Pressing the button connected to `P11` will attempt to connect to the server. This is a pairing mode, after having pressed the button you can register the device to an account.
+  - Pressing the button connected to `P11` will attempt to connect to the server.
+  - This is a pairing mode, after having pressed the button you can register the device to an account.
+  - If the connection is succesfull and the server does not give an error the LED will blink green. if the LED blinks red there was an error. (Device is already registered or another error, this can be seen on the serial port of the FiPy)
 
 For more details, refer to the code comments and documentation within the project files.
