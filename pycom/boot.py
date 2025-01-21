@@ -2,6 +2,7 @@
 import pycom
 import network
 import time
+import config
 import wificonfig
 import socket
 from time import sleep
@@ -30,7 +31,7 @@ def print_signal_strength():
 print_signal_strength()
 
 # Attach to the LTE network
-lte.attach(band=None, apn='iot.1nce.net')  # Replace 'your_apn' with your APN
+lte.attach(band=None, apn=apnName)  # Replace in config.py
 
 # Wait for the LTE network to attach
 n = 0

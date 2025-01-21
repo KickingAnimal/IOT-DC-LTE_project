@@ -2,8 +2,8 @@ import os, httpApp, app
 from threading import Thread
 
 def sslContext():
-        privKey = r'/home/dion-frankes/Downloads/slimme-rattenval-IOT/flask-iot-webserver/ssl/kickinganimal.nl/privatekey.pem'
-        cert = r'/home/dion-frankes/Downloads/slimme-rattenval-IOT/flask-iot-webserver/ssl/kickinganimal.nl/cert.pem'
+        privKey = r'privatekey.pem'
+        cert = r'cert.pem'
         return (cert, privKey)
 
 def httpsServer():
