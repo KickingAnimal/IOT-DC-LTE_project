@@ -75,7 +75,14 @@ This guide will walk you through the steps to set up the IOT-DC-LTE project, inc
    
    ![Sync Project to Device](Media/PyMakr_project_sync.png)
 
-### Step 4: Wiring setup for the FiPy
+4. **Reboot the FiPy and verify that the code is flashed correctly**
+   - Open the terminal from the FiPy with the PiMakr extension in VS Code.
+   ![Create-terminal-button-pymakr](/Media/PyMakr-create-term.png)
+   - Once the firmware is flashed reboot the FiPy by pressing the button next to the RGB LED.
+   - In the terminal something similar to the screenshot should be visible, indicating that the FiPy is connecting to LTE (or WiFi) and has done so successfully.
+   ![Successfull LTE connection on the terminal](/Media/terminal-output-after-flash-and-reset.png)
+
+### Step 4: Wiring setup for the FiPy 
 1. **Default Wiring Diagram**
    ![wiring dagram of the FiPy](Media/circuit_image.png)
    - The antenna needs to be connected to the underside of the board
@@ -99,7 +106,9 @@ This guide will walk you through the steps to set up the IOT-DC-LTE project, inc
 3. **Access the Webserver:**
    - Open a web browser and go to `http://your.server.ip:4000` for HTTP (depending on your server settings)
    ![Homepage of the server](Media/webpage.png)
+   - this is how the website should look like when first opening it.
    ![Trap detail page](/Media/trap-webpage.png)
+   - this is how the website looks like when logged in and viewing a trap that is connected and actively powered on.
 
 ### Additional Information
 
@@ -114,5 +123,8 @@ This guide will walk you through the steps to set up the IOT-DC-LTE project, inc
   - Pressing the button connected to `P11` will attempt to connect to the server.
   - This is a pairing mode, after having pressed the button you can register the device to an account.
   - If the connection is succesfull and the server does not give an error the LED will blink green. if the LED blinks red there was an error. (Device is already registered or another error, this can be seen on the serial port of the FiPy)
+
+- **Trap Switch**
+  - If the switch (trap) changes state this is detected by `P10` and it will send that data to the configured server.
 
 For more details, refer to the code comments and documentation within the project files.
