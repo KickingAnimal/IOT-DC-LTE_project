@@ -75,7 +75,13 @@ This guide will walk you through the steps to set up the IOT-DC-LTE project, inc
    
    ![Sync Project to Device](Media/PyMakr_project_sync.png)
 
-### Step 4: Running the Flask Webserver
+### Step 4: Wiring setup for the FiPy
+1. **Default Wiring Diagram**
+   ![wiring dagram of the FiPy](Media/circuit_image.png)
+   - The antenna needs to be connected to the underside of the board
+   - The power input can be a range of voltages, most commonly 5v.
+ 
+### Step 5: Running the Flask Webserver
 
 1. **Install Dependencies:**
    - Navigate to the `flask-iot-webserver` directory.
@@ -92,6 +98,8 @@ This guide will walk you through the steps to set up the IOT-DC-LTE project, inc
 
 3. **Access the Webserver:**
    - Open a web browser and go to `http://your.server.ip:4000` for HTTP (depending on your server settings)
+   ![Homepage of the server](Media/webpage.png)
+   ![Trap detail page](/Media/trap-webpage.png)
 
 ### Additional Information
 
