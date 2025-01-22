@@ -31,7 +31,7 @@ def print_signal_strength():
 print_signal_strength()
 
 # Attach to the LTE network
-lte.attach(band=None, apn=apnName)  # Replace in config.py
+lte.attach(band=None, apn=config.apnName)  # Replace in config.py
 
 # Wait for the LTE network to attach
 n = 0
@@ -41,6 +41,8 @@ while not lte.isattached() and n < 15:
     print(n)
     print_signal_strength()
     n += 1
+    if n == 15:
+        print("Could not attach to LTE network, trying to connect to WiFi back-up")
     
 
 
@@ -52,10 +54,13 @@ if lte.isattached():
 
 # Wait for the LTE network to connect
 i = 0
-while not lte.isconnected():
+while not lte.isconnected() and lte.isattached() and i < 15:
     time.sleep(1)
     print("Connecting to LTE network...")
     i += 1
+    if i == 15:
+        print("Could not connect to LTE network")
+    
 
 if lte.isconnected():
     print("Connected to LTE network")

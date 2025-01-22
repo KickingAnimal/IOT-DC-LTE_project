@@ -6,14 +6,17 @@ This guide will walk you through the steps to set up the IOT-DC-LTE project, inc
 
 ### Prerequisites
 
-- Visual Studio Code (VSCode)
-- PyMakr Extension for VSCode
-- Python 3.x
-- Flask
-- Pycom FiPy
-- Pycom Expansion Board (Or some way to power and send data to the FiPy)
-
-- Basic knowledge of GitHub and VS Code is expected and reading documentation of software (extentions) used, as that is better at explaining how to use it.
+- Software:
+   - Visual Studio Code (VSCode)
+   - PyMakr Extension for VSCode
+   - Python 3.x
+   - Flask
+- Hardware:
+   - Pycom FiPy
+   - Pycom Expansion Board (Or some way to power and send data to the FiPy)
+   - NB-IOT capable SIM Card (for testing WiFi is available)
+   - Antenna optimized for LTE (u.fl connector)
+- Basic knowledge of GitHub and VS Code is expected and reading documentation of software (extentions) used, as that is best for understanding the full workings of the software.
 
 ### Step 1: Downloading the Code
 
@@ -44,6 +47,7 @@ This guide will walk you through the steps to set up the IOT-DC-LTE project, inc
    ```
 
 2. **Update WiFi Credentials:**
+   - This is only needed if you're not using a SIM and are testing initial setup
    - Open the `pycom/wificonfig.py` file.
    - Update the `SSID` and `PASSWORD` variables with your WiFi credentials.
 
@@ -65,12 +69,11 @@ This guide will walk you through the steps to set up the IOT-DC-LTE project, inc
    - Connect the Expansion Board to your computer via USB.
 
 3. **Flash the Firmware:**
-   - Open the PyMakr Console in VSCode.
+   - Open the PyMakr tab in VSCode.
    - Select the correct serial port for your FiPy.
-   - Click on the "Flash" button to flash the latest firmware to your FiPy.
-
-
-
+   - Click on the "Sync project to device" button to flash the latest firmware to your FiPy.
+   
+   ![Sync Project to Device](Media/PyMakr_project_sync.png)
 
 ### Step 4: Running the Flask Webserver
 
