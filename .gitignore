@@ -1,2 +1,3 @@
 flask-iot-webserver/env
 flask-iot-webserver/__pycache__
+pycom/wificonfig.py
