@@ -127,4 +127,4 @@ This guide will walk you through the steps to set up the IOT-DC-LTE project, inc
 - **Trap Switch**
   - If the switch (trap) changes state this is detected by `P10` and it will send that data to the configured server.
 
-For more details, refer to the code comments and documentation within the project files.
+For more details, refer to the code comments and documentation within the project files or open an issue on the GitHub Repository.
